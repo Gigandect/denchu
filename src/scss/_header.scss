@@ -101,6 +101,7 @@ header {
     right: 0;
     transform: translateX(100%);
     @include trans;
+    overflow-y: auto;
 
     &.open {
         transform: translateX(0);
@@ -149,19 +150,17 @@ header {
     }
 
     .switch {
-        position: absolute;
-        bottom: var(--gutter-xs);
-        right: var(--gutter-xs);
         width: 100%;
         height: auto;
         font-size: 80%;
-        font-weight: var(--fw-bld);
+        font-weight: var(--fw-reg);
         padding: 0;
-        margin: var(--gutter-m) 0 0;
+        margin: calc(var(--gutter)*2) 0 0;
         border: none;
         color: var(--white);
         background: none;
-        justify-content: flex-end;
+        display: block;
+        text-align: left;
 
         &:hover,
         &:focus {

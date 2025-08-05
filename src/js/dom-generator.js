@@ -14,7 +14,7 @@ const sub_act_list = document.querySelector('#sub_act_list');
 const game_list_s_template = (game) => `
     <li>
         <div class="img">
-            <img src="${game.image}" alt="${game.title}のスクリーンショット" width="600" height="400">
+            <img src="img/${game.image}" alt="${game.title}のスクリーンショット" width="600" height="400">
         </div>
         <div class="txt">
             <h4 class="list-name">${game.title}</h4>
@@ -26,7 +26,7 @@ const game_list_s_template = (game) => `
 const game_list_template = (game) => `
     <li>
         <div class="img">
-            <img src="${game.image}" alt="${game.title}のスクリーンショット" width="600" height="400">
+            <img src="img/${game.image}" alt="${game.title}のスクリーンショット" width="600" height="400">
         </div>
         <div class="txt">
             <h3 class="list-name">${game.title}</h3>
@@ -40,7 +40,7 @@ const game_list_template = (game) => `
 const act_list_s_template = (act) => `
     <li>
         <div class="img">
-            <img src="${act.image}" alt="${act.name}の写真" width="600" height="400">
+            <img src="img/${act.image}" alt="${act.name}の写真" width="600" height="400">
         </div>
         <div class="txt">
             <h4 class="list-name">${act.name}</h4>
@@ -52,7 +52,7 @@ const act_list_s_template = (act) => `
 const sub_act_list_template = (sub) => `
     <li>
         <div class="img">
-            <img src="${sub.image}" alt="${sub.name}の写真" width="600" height="400">
+            <img src="img/${sub.image}" alt="${sub.name}の写真" width="600" height="400">
         </div>
         <div class="txt">
             <h4 class="list-name">${sub.name}</h4>
@@ -66,7 +66,7 @@ const act_list_template = (act) => `
     <li>
         <div class="img">
             <p class="${act.performance.toLowerCase()}">${act.performance}</p>
-            <img src="${act.image}" alt="${act.name}の写真" width="600" height="400">
+            <img src="img/${act.image}" alt="${act.name}の写真" width="600" height="400">
         </div>
         <div class="txt">
             <p class="floor">${act.floor}F</p>
