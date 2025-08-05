@@ -1,0 +1,46 @@
+@use 'mixin' as *;
+
+.js-inview {
+    @include trans();
+    opacity: 1;
+
+    &.up {
+        @include trans(.5s);
+        transform: translateY(0);
+    }
+
+    &.blur {
+        @include trans(.5s);
+    }
+
+    &.lrlr-l,
+    &.lrlr-r {
+        transform: translateX(0);
+    }
+}
+
+.js-inview:not(.inview) {
+    opacity: 0;
+
+    &.up {
+        transform: translateY(100%);
+        filter: blur(20px);
+    }
+
+    &.blur {
+        filter: blur(20px);
+    }
+
+    &.lrlr-l,
+    &.lrlr-r {
+        opacity: 0;
+    }
+
+    &.lrlr-l {
+        transform: translateX(50%);
+    }
+
+    &.lrlr-r {
+        transform: translateX(-50%);
+    }
+}

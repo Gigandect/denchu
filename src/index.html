@@ -15,7 +15,302 @@
     <link rel="icon" href="#" sizes="192x192" />
     <link rel="apple-touch-icon" href="#" />
     <meta name="msapplication-TileImage" content="#" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=double_arrow" />
 </head>
-<body>
+<body class="is-loading">
+<div id="intro">
+    <div class="wrap">
+        <p>
+            Do you want to switch to a boring mode?
+            <small>あなたは退屈モードをご希望ですか？</small>
+        </p>
+        <ul class="switch-list">
+            <li><button id="no-button">No</button></li>
+            <li><button id="yes-button">Yes</button></li>
+        </ul>
+    </div>
+</div>
+<div class="everything-is-my-fault">
+<div class="open-wrap"></div>
+<header>
+    <div class="inner">
+        <h1 class="site-title"><a class="gotop" href="#"><img src="img/logo-jp.svg" alt="伝説の途中"></a></h1>
+        <button class="menu-button" aria-controls="global-nav" aria-expanded="false" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <nav id="global-nav" class="global-nav">
+        <ul>
+            <li><a href="#statement">Statement</a></li>
+            <li><a href="#contents">Contents</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#acts">Acts</a></li>
+            <li><a href="#timetable">Time Table</a></li>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#access">Access</a></li>
+            <li><a href="#sponsor">Sponsor</a></li>
+            <li><a href="#boring">Boring Stuff</a></li>
+            <li><a class="btn" href="#">BUY TICKET</a></li>
+            <li><button id="mode-switch" class="btn switch" href="#">SWITCH MODE</button></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main-content">
+    <section id="first">
+        <div class="kv">
+            <img src="img/kv.jpg" alt="キービジュアル">
+            <div class="txt">
+                <div class="shake-wrap">
+                    <p><img src="img/logo.svg" alt="伝説の途中ロゴ画像"></p>
+                    <p class="date"><time datetime="2025-10-25">2025/10/25/(SAT.)</time><wbr><span class="venue"> at SHIBUYA WOMB</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<div class="shake">
+
+    <section id="statement" class="statement">
+        <div class="inner">
+            <h2 class="section-title js-inview"><span>Statement</span><span class="sub">ステートメント</span></h2>
+            <p class="first">これまでの思い出は<wbr>全部今と未来の<wbr>伝説の途中にあるんだと思う</p>
+            <p class="js-inview up">わたし達「伝説の途中」制作チームは、<wbr>2025年10月25日(土)に渋谷WOMBにて、ゲームイベント「伝説の途中」をプロデュースいたします。</p>
+            <p class="js-inview up">街中に点在する電柱のように、とても大切だけど当たり前すぎて視界に入らない、そんなレトロゲームカルチャーを中心に、ゲームを好きな人もそうでない人も、ゲームをきっかけに様々な思い出に出会えるイベントを開催します。</p>
+        </div>
+    </section>
+    <section id="contents">
+        <div class="inner">
+            <h2 class="section-title js-inview"><span>Content</span><span class="sub">コンテンツ</span></h2>
+
+            <div class="contents-list">
+                <div class="content-wrap js-inview lrlr-l">
+                    <h3 class="content-title">
+                        <span>Game</span>
+                        <span>4F Lounge</span>
+                    </h3>
+                    <p class="sub-title">インディーゲーム試遊コーナー</p>
+                    <p>様々なデベロッパーによる開発中のゲームや新作のゲームの紹介</p>
+
+                    <ul id="game_list_s" class="game-list panels"></ul>
+                </div>
+                <div class="content-wrap js-inview lrlr-r">
+                    <h3 class="content-title">
+                        <span>DJ & Live</span>
+                        <span>2F Main Floor</span>
+                    </h3>
+                    <p class="sub-title">Chip music</p>
+                    <p>ゲーム音楽に影響を与えた&受けたアーティスト達によるライブやDJを行います</p>
+                
+                    <ul id="act_list_s" class="act-list panels">
+                    </ul>
+                </div>
+                <div class="content-wrap js-inview lrlr-l">
+                    <h3 class="content-title">
+                        <span>Sub DJ & Live</span>
+                        <span>1F Sub Floor</span>
+                    </h3>
+                    <p class="sub-title">甘口コレクティブ</p>
+                    <p>イラストレーターと会えるパーティーだよ☆〜（ゝ。∂）💓</p>
+                
+                    <ul id="sub_act_list" class="act-list panels">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="games">
+        <div class="inner">
+            <h2 class="section-title js-inview"><span>Games</span><span class="sub">ゲーム</span></h2>
+            <ul id="game_list" class="game-list panels big-panel"></ul>
+        </div>
+    </section>
+    <section id="acts">
+        <div class="inner">
+            <h2 class="section-title js-inview"><span>Acts</span><span class="sub">出演者</span></h2>
+            <ul id="act_list" class="act-list panels big-panel"></ul>
+        </div>
+    </section>
+    <section id="timetable">
+        <div class="inner">
+            <h2 class="section-title js-inview"><span>Time table</span><span class="sub">タイムテーブル</span></h2>
+
+            <div class="tt-wrap">
+                <div class="tt-cont">
+                    <h3 class="tt-title">Main Floor</h3>
+                    <div class="tt">
+                        <div class="box">
+                            <p class="time">17:00 ~</p>
+                            <p class="act">Main act 01</p>
+                        </div>
+                        <div class="box">
+                            <p class="time">18:00 ~</p>
+                            <p class="act">Main act 02</p>
+                        </div>
+                        <div class="box">
+                            <p class="time">19:00 ~</p>
+                            <p class="act">Main act 03</p>
+                        </div>
+                        <div class="box">
+                            <p class="time">20:00 ~</p>
+                            <p class="act">Main act 04</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tt-cont">
+                    <h3 class="tt-title">Sub Floor</h3>
+                    <div class="tt">
+                        <div class="box">
+                            <p class="time">17:00 ~</p>
+                            <p class="act">Sub act 01</p>
+                        </div>
+                        <div class="box">
+                            <p class="time">18:00 ~</p>
+                            <p class="act">Sub act 02</p>
+                        </div>
+                        <div class="box">
+                            <p class="time">19:00 ~</p>
+                            <p class="act">Sub act 03</p>
+                        </div>
+                        <div class="box">
+                            <p class="time">20:00 ~</p>
+                            <p class="act">Sub act 04</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="info">
+        <div class="inner">
+            <h2 class="section-title js-inview"><span>Information</span><span class="sub">インフォメーション</span></h2>
+            <dl class="info-list">
+                <dt>日時</dt>
+                <dd>
+                    2025年10月25日(土曜)<br>
+                    OPEN 17:00<br>
+                    CLOSE 20:30
+                </dd>
+                <dt>入場料</dt>
+                <dd>
+                    <ul class="small-list">
+                        <li>前売：4,000円(仮)</li>
+                        <li>当日：5,000円(仮)</li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </section>
+    <section id="access">
+        <div class="inner">
+            <h2 class="section-title js-inview"><span>Access</span><span class="sub">アクセス</span></h2>
+
+            <div class="map-area">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.754353125256!2d139.69237017680538!3d35.658423372594726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188caa14bf5541%3A0x47a02a52c7050543!2sWOMB!5e0!3m2!1sja!2sjp!4v1754322428454!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <p class="map-txt">〒150-0044 東京都渋谷区円山町２−１６</p>
+
+        </div>
+    </section>
+    <section id="sponsor">
+        <div class="inner">
+            <h2 class="section-title js-inview"><span>Sponsor</span><span class="sub">スポンサー</span></h2>
+
+            <ul class="sponsor-list">
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="img/noimage.gif" alt="スポンサー01">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="img/noimage.gif" alt="スポンサー01">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="img/noimage.gif" alt="スポンサー01">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="img/noimage.gif" alt="スポンサー01">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <img src="img/noimage.gif" alt="スポンサー01">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id="boring">
+        <div class="inner">
+            <h2 class="section-title js-inview"><span>Boring Stuff</span><span class="sub">その他</span></h2>
+
+            <div class="boring-wrap">
+                <h3>注意事項</h3>
+                <dl>
+                    <dt>入場について</dt>
+                    <dd>
+                        <p>当日は、会場スタッフの指示に従ってスムーズなご入場にご協力をお願いいたします。</p>
+                        <p>チケットに記載されている時間に遅れてもご入場いただけますが、混雑状況によってはお待ちいただく場合がございます。</p>
+                        <p>入場時に手荷物検査を実施する場合があります。</p>
+                        <p>再入場はできませんのでご注意ください。</p>
+                    </dd>
+
+                    <dt>会場でのマナーについて</dt>
+                    <dd>
+                        <p>会場内での危険な行為（走り回る、大声で騒ぐなど）は禁止です。</p>
+                        <p>他のお客様のご迷惑となる行為はご遠慮ください。</p>
+                        <p>会場内での喫煙は、指定された喫煙スペースをご利用ください。</p>
+                        <p>ゴミは、各自お持ち帰りいただくか、会場に設置されたゴミ箱に分別して捨ててください。</p>
+                    </dd>
+
+                    <dt>撮影・録音について</dt>
+                    <dd><p>禁止されている演者さん以外の出演者については、写真・動画の撮影、およびSNSへの投稿はOKです。<br>ただし、ライブ配信はご遠慮ください。また、他のお客様が不快に感じないよう、顔がはっきりわかるような映り込みにはご配慮をお願いいたします。</p></dd>
+
+                    <dt>公式カメラマンによる撮影について</dt>
+                    <dd>
+                        <p>イベント当日は、記録・広報のため、主催者側のカメラマンが会場内の様子を撮影する場合があります。</p>
+                        <p>撮影した写真や動画は、公式サイトやSNSなどの各媒体に掲載される可能性があります。ご来場いただいた時点で、これらの写真・動画へのご自身の映り込みを許諾いただいたものとみなしますので、あらかじめご了承ください。</p>
+                    </dd>
+
+                    <dt>持ち込み禁止物</dt>
+                    <dd>
+                        <p>飲食物の持ち込みはご遠慮ください。</p>
+                        <p>危険物（刃物、火薬類など）、ペットなどの動物、周りの方の視界を遮る大きなもの（三脚、大きなボードなど）の持ち込みは禁止です。</p>
+                    </dd>
+
+                    <dt>その他</dt>
+                    <dd>
+                        <p>会場内で気分が悪くなった場合は、無理をせずお近くのスタッフにお声がけください。</p>
+                        <p>貴重品は各自で管理してください。盗難・紛失に関して、主催者は一切の責任を負いません。</p>
+                        <p>イベントの内容や出演者は、予告なく変更になる場合があります。</p>
+                        <p>注意事項に反する行為が見られた場合、退場していただく場合があります。</p>
+                    </dd>
+                </dl>
+            </div>
+            <div class="boring-wrap white">
+                <h3>すべての人が楽しめるイベントを目指して</h3>
+                <p>このイベントは、年齢、性別、障がいの有無、ゲームの好き嫌いに関わらず、すべての人が楽しむ可能性を大切にしたいと考えています。もし、イベントを楽しむ上で何か障壁となることがありましたら、どうかお気軽にスタッフまでお声がけください。</p>
+                <p>地球上には様々な人がいます。どんな人にも楽しむ権利があり、その権利を奪うべきではありません。</p>
+                <p>たとえ、あなたが会場にいる誰かを苦手だと感じたとしても、どうか相手を傷つけるような行為はしないでください。相手にも、このイベントを楽しむ権利があります。もしかしたら、その人との関係は100年後には変わっているかもしれません。</p>
+                <p>でも、もしあなたが誰かに攻撃されたり、嫌がらせを受けたりした場合は、遠慮なくイベントスタッフや会場スタッフに声をかけてください。</p>
+                <p>このイベントが、みんなで新しい思い出を創るきっかけとなることを願っています。</p>
+            </div>
+
+        </div>
+    </section>
+</div><!-- Shake -->
+</main>
+
+<footer><small>&copy; 2025 伝説の途中.</small></footer>
+</div><!-- End of .everything-is-my-fault -->
 </body>
 </html>
+

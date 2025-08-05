@@ -1,0 +1,26 @@
+:root {
+    // COLOR
+    --main-color: #FDFA01;
+    --sub-color: #0D26B8;
+    --accent-color: #DB01C5;
+    --text-color: #1B2144;
+    --white: #FFFFFF;
+
+    //STRUCTURE
+    --container-width: 100%;
+    --gutter: 1rem;
+    --gutter-xs: .5rem;
+    --gutter-m: 3rem;
+    --gutter-l: 5rem;
+    --site-max-width: 1040px;
+
+    // FONT
+    --font-family: 'Roboto', 'BIZ UDPGothic', 'Helvetica Neue', Arial, 'Noto Sans JP', sans-serif;
+    --fw-reg: 400;
+    --fw-bld: 700;
+    --fw-blk: 900;
+
+    --shadow: .25rem .25rem 0px rgba(13, 38, 184, 1);
+    --sp-shadow: 2px 2px 1px rgba(255, 0, 0, .5),
+        -2px -2px 1px rgba(0, 255, 0, .5);
+}

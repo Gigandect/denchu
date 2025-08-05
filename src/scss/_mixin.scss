@@ -1,0 +1,21 @@
+@mixin fs($fs) {
+    font-size: $fs + px;
+    font-size: calc((#{$fs} / 16) * 1rem);
+    line-height: 1.5em;
+}
+
+@mixin fs-base() {
+    @include fs(16);
+}
+
+@mixin mq() {
+    @media screen and (min-width: 767px) {
+        @content;
+    }
+}
+
+@mixin trans($sec: 0.1s) {
+    -webkit-transition: $sec ease-in-out;
+    -moz-transition: $sec ease-in-out;
+    transition: $sec ease-in-out;
+}

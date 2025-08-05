@@ -3,13 +3,52 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+// NODE_ENVが'production'かどうかで、プラグインのリストを分ける
+const isProduction = process.env.NODE_ENV === 'production';
+
+// プラグイン設定: ビルドプロセスで特別なタスクを実行
+const plugins = [
+  // HTMLファイルを生成し、バンドルされたJS/CSSを注入
+  new HtmlWebpackPlugin({
+    template: './src/index.html', // 元になるHTMLファイル
+    filename: 'index.html',     // 出力されるHTMLファイル名
+    inject: 'body',             // <script>タグを<body>の直前に挿入
+    // 生成されるHTML, CSS, JSをminify（最適化）
+    minify: {
+      collapseWhitespace: true,      // 空白を削除
+      removeComments: true,          // コメントを削除
+      removeRedundantAttributes: true, // 不要な属性を削除
+      removeScriptTypeAttributes: true, // scriptタグのtype属性を削除
+      useShortDoctype: true,         // DOCTYPEを短縮
+    },
+  }),
+  // 指定されたファイルを'dist'フォルダにコピー
+  new CopyWebpackPlugin({
+    patterns: [
+      { from: 'src/icons/', to: 'icons/', noErrorOnMissing: true }, // アイコンフォルダ
+    ],
+  }),
+];
+
+
+// 本番環境でのみHtmlInlineScriptPluginを追加する
+if (isProduction) {
+  plugins.push(
+    // 生成されたJavaScriptをHTMLファイルに直接インライン化
+    new HtmlInlineScriptPlugin({
+      scriptMatchPattern: [/bundle\.js$/], // 'bundle.js'をインライン化の対象に
+    })
+  );
+}
+
+
 module.exports = {
   // ビルドモードの指定（開発用か本番用か）
   // 'production'にすると、JavaScriptが自動でminifyされるよ
   // mode: 'production', 
 
   // エントリーポイント: webpackがビルドを開始するJavaScriptファイル
-  entry: './src/index.js',
+  entry: './src/js/main.js',
 
   // 出力設定: バンドルされたファイルの保存場所とファイル名
   output: {
@@ -58,7 +97,7 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: '[name][ext]', // 出力ファイル名
+          filename: 'img/[name][ext]', // 出力ファイル名
         },
       },
       // HTMLファイルの処理: HTMLをWebpackで扱えるようにする
@@ -69,33 +108,8 @@ module.exports = {
     ],
   },
 
-  // プラグイン設定: ビルドプロセスで特別なタスクを実行
-  plugins: [
-    // HTMLファイルを生成し、バンドルされたJS/CSSを注入
-    new HtmlWebpackPlugin({
-      template: './src/index.html', // 元になるHTMLファイル
-      filename: 'index.html',     // 出力されるHTMLファイル名
-      inject: 'body',             // <script>タグを<body>の直前に挿入
-      // 生成されるHTML, CSS, JSをminify（最適化）
-      minify: {
-        collapseWhitespace: true,      // 空白を削除
-        removeComments: true,          // コメントを削除
-        removeRedundantAttributes: true, // 不要な属性を削除
-        removeScriptTypeAttributes: true, // scriptタグのtype属性を削除
-        useShortDoctype: true,         // DOCTYPEを短縮
-      },
-    }),
-    // 生成されたJavaScriptをHTMLファイルに直接インライン化
-    new HtmlInlineScriptPlugin({
-      scriptMatchPattern: [/bundle\.js$/], // 'bundle.js'をインライン化の対象に
-    }),
-    // 指定されたファイルを'dist'フォルダにコピー
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: 'src/icons/', to: 'icons/', noErrorOnMissing: true }, // アイコンフォルダ
-      ],
-    }),
-  ],
+  // プラグイン設定をここに移動
+  plugins: plugins,
 
   // 開発サーバー設定: 開発中のライブリロードなどを提供
   devServer: {
